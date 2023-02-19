@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="stylef.css" />
+    <title>Document</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.production.min.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="text/babel">
+      /**
+       * props stand for properties
+       * props are like HTML attributes (name = 'value')
+       * props can pass DATA from parent component to child
+       * components
+       * props are immutable (no change) * you can not change its value
+       */
+      class App extends React.Component {
+        render() {
+          return (
+            <div>
+              <Header name="Hello from React HEADER" />
+              <Content name="Hello form React Content" />
+              <Footer />
+            </div>
+          );
+        }
+      }
+
+      // header
+      class Header extends React.Component {
+        render() {
+          // if you targeted this.props without any more object properties
+          // you will got all the props values
+          // return <header>{this.props}</header>;
+          return <header>{this.props.name}</header>;
+        }
+      }
+
+      // content or body
+      class Content extends React.Component {
+        render() {
+          return <main>{this.props.name}</main>;
+        }
+      }
+
+      // footer
+      class Footer extends React.Component {
+        render() {
+          return <footer>This is the FOOTER</footer>;
+        }
+      }
+      // the render of the HTML document
+      ReactDOM.render(<App />, document.getElementById("app"));
+    </script>
+  </body>
+</html>
