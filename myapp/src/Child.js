@@ -10,3 +10,10 @@ class Child extends Component {
 }
 
 export default Child;
+
+
+const Test = () => {
+  return (
+    <h1>test stateless Component</h1>
+  )
+}

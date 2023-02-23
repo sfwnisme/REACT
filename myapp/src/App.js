@@ -1,55 +1,21 @@
 import React, { Component } from 'react'
 import Child from './Child'
-// import './App.css';
+import Items from './components/items.js'
+import './App.css';
 
 class App extends Component {
-  // in the element attribute field it needs to add .bind(this) after the function name
   state = {
-    name: 'Borada',
-    name2: 'Change me'
+    items: [
+      { id: 1, name: "ahmed", age: 22 },
+      { id: 2, name: "tariq", age: 26 },
+    ]
   }
-
-  // static function
-  onClick() {
-    console.log('static click function')
-  }
-  // arrow function
-  onClick2 = () => console.log('arrow click function')
-
-  // using state
-  // static function
-  onClick3() {
-    console.log(this.state.name, 'from state')
-  }
-  // arrow function 
-  onClick4 = () => {
-    console.log(this.state.name, ' from state with arrow no .bind(this)')
-  }
-
-
-
-  changeState = () => {
-    this.state.name2 = "new name"
-    this.setState({
-      name2: 'Changed'
-    })
-  }
-
   render() {
     return (
-      <div className="App">
+      <div>
         <Child />
-        {/* using the events normally without any additions */}
-        <button onClick={this.onClick}>Click static</button>
-        <button onClick={this.onClick2}>Click arrow</button>
+        <Items items={this.state.items} />
 
-        {/* using events with state method */}
-        <button onClick={this.onClick3.bind(this)}>Click static with state</button>
-        <button onClick={this.onClick3}>Click static with state no .bind(this)</button>
-        <button onClick={this.onClick4}>Click arrow with state no .bind(this)</button>
-
-        {/* click on this element and will see the changes */}
-        <h2 onClick={this.changeState}>{this.state.name2}</h2>
       </div>
     )
   }
