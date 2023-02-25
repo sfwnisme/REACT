@@ -1,21 +1,58 @@
 import React, { Component } from 'react'
 import Child from './Child'
-import Items from './components/items.js'
+// import Items from './components/items.js'
+import Items2 from './components/items2.js'
 import './App.css';
 
 class App extends Component {
   state = {
     items: [
-      { id: 1, name: "ahmed", age: 22 },
-      { id: 2, name: "tariq", age: 26 },
+      { id: 1, name: 'Ahemd', age: 22, count: 2 },
+      { id: 2, name: 'ali', age: 23, count: 3 },
+      { id: 3, name: 'Tariq', age: 25, count: 5 },
+      { id: 4, name: 'Omar', age: 32, count: 4 },
+      { id: 5, name: 'Khaled', age: 62, count: 1 },
     ]
   }
+
+  // state = {
+  //   name: 'Ali'
+  // }
+  // handelChange = (e) => {
+  //   console.log(e.target.value)
+  //   this.setState({
+  //     name: e.target.value
+  //   })
+  // }
+  // handelSubmit = (e) => {
+  //   e.preventDefault()
+  //   console.log(this.state.name)
+
+  //   e.target.value = ''
+  // }
+
+  // handelSelect = (e) => {
+  //   this.setState({
+  //     name: e.target.value
+  //   })
+  // }
+
   render() {
     return (
       <div>
         <Child />
-        <Items items={this.state.items} />
-
+        <Items2 items={this.state.items} />
+        <Items2 items={this.state.items} />
+        {/* <form onSubmit={this.handelSubmit}>
+          <input type="test" onChange={this.handelChange} />
+          <select onChange={this.handelChange}>
+            <option>select one</option>
+            <option>select two</option>
+            <option>select three</option>
+          </select>
+          <input type='submit' />
+        </form>
+        {this.state.name} */}
       </div>
     )
   }
