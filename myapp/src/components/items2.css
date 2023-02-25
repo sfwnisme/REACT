@@ -1,0 +1,8 @@
+.cont:nth-of-type(even) {
+  background-color: black;
+  color: white;
+}
+.cont:nth-of-type(odd) {
+  background-color: rgb(167, 167, 167);
+  color: black;
+}
