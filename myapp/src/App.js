@@ -1,22 +1,25 @@
+'use strict';
 import React, { Component } from 'react'
-import Child from './Child'
-// import Items from './components/items.js'
-import './App.css';
+import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
+import Home from './components/Home'
+import About from './components/About'
+
+
+import Nav from './components/Nav'
 
 class App extends Component {
-  componentDidMount() {
-    console.log('mount')
-  }
-  constructor() {
-    super()
-    console.log('constructor');
-  }
-
   render() {
-    console.log('render')
     return (
-      <div>
-      </div>
+      <BrowserRouter>
+        <div className='App'>
+          <Nav />
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+          </Routes>
+          {/* <Route path='/about' component={About} /> */}
+        </div>
+      </BrowserRouter>
     )
   }
 }
